@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react'
+import { forwardRef, type ComponentPropsWithoutRef } from 'react'
 
 // we merge our custom props with built-in props of input element with the &
 type InputProps = {
@@ -6,11 +6,16 @@ type InputProps = {
   id: string
 } & ComponentPropsWithoutRef<'input'>
 
-export default function Input({ label, id, ...props }: InputProps) {
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  { label, id, ...props },
+  ref
+) {
   return (
     <p>
       <label htmlFor={id}>{label}</label>
-      <input id={id} {...props}></input>
+      <input id={id} {...props} ref={ref}></input>
     </p>
   )
-}
+})
+
+export default Input
