@@ -3,10 +3,10 @@ https://www.udemy.com/course/react-typescript-the-practical
 
 Components:
 
-Button
-Card
-Container
-Form
-IconButton
-Input
-List
+- Button
+- Card
+- Container
+- Form
+- IconButton
+- Input
+- List
